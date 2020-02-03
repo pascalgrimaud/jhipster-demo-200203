@@ -1,4 +1,5 @@
 package io.github.pascalgrimaud.toto.service.dto;
+
 import java.time.LocalDate;
 import javax.validation.constraints.*;
 import java.io.Serializable;

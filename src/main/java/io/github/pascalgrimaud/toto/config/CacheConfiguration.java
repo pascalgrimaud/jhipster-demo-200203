@@ -43,6 +43,11 @@ public class CacheConfiguration {
             createCache(cm, io.github.pascalgrimaud.toto.domain.Authority.class.getName());
             createCache(cm, io.github.pascalgrimaud.toto.domain.User.class.getName() + ".authorities");
             createCache(cm, io.github.pascalgrimaud.toto.domain.Alpha.class.getName());
+            createCache(cm, io.github.pascalgrimaud.toto.domain.Project.class.getName());
+            createCache(cm, io.github.pascalgrimaud.toto.domain.Label.class.getName());
+            createCache(cm, io.github.pascalgrimaud.toto.domain.Label.class.getName() + ".tickets");
+            createCache(cm, io.github.pascalgrimaud.toto.domain.Ticket.class.getName());
+            createCache(cm, io.github.pascalgrimaud.toto.domain.Ticket.class.getName() + ".labels");
             // jhipster-needle-ehcache-add-entry
         };
     }

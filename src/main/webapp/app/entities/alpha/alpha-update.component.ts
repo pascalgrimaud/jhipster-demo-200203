@@ -4,7 +4,6 @@ import { HttpResponse } from '@angular/common/http';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import * as moment from 'moment';
 
 import { IAlpha, Alpha } from 'app/shared/model/alpha.model';
 import { AlphaService } from './alpha.service';

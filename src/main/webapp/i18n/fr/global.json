@@ -8,6 +8,9 @@
       "entities": {
         "main": "Entités",
         "alpha": "Alpha",
+        "project": "Project",
+        "label": "Label",
+        "ticket": "Ticket",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

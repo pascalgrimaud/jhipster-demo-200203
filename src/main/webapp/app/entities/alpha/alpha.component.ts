@@ -34,7 +34,8 @@ export class AlphaComponent implements OnInit, OnDestroy {
   ) {}
 
   loadPage(page?: number): void {
-    const pageToLoad: number = page ? page : this.page;
+    const pageToLoad: number = page || this.page;
+
     this.alphaService
       .query({
         page: pageToLoad - 1,
@@ -96,7 +97,7 @@ export class AlphaComponent implements OnInit, OnDestroy {
         sort: this.predicate + ',' + (this.ascending ? 'asc' : 'desc')
       }
     });
-    this.alphas = data ? data : [];
+    this.alphas = data || [];
   }
 
   protected onError(): void {

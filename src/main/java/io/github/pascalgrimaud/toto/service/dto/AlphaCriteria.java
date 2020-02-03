@@ -33,10 +33,10 @@ public class AlphaCriteria implements Serializable, Criteria {
 
     private LocalDateFilter birthday;
 
-    public AlphaCriteria(){
+    public AlphaCriteria() {
     }
 
-    public AlphaCriteria(AlphaCriteria other){
+    public AlphaCriteria(AlphaCriteria other) {
         this.id = other.id == null ? null : other.id.copy();
         this.firstname = other.firstname == null ? null : other.firstname.copy();
         this.lastname = other.lastname == null ? null : other.lastname.copy();

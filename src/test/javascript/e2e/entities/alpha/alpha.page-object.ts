@@ -4,6 +4,8 @@ export class AlphaComponentsPage {
   createButton = element(by.id('jh-create-entity'));
   deleteButtons = element.all(by.css('jhi-alpha div table .btn-danger'));
   title = element.all(by.css('jhi-alpha div h2#page-heading span')).first();
+  noResult = element(by.id('no-result'));
+  entities = element(by.id('entities'));
 
   async clickOnCreateButton(): Promise<void> {
     await this.createButton.click();
@@ -26,6 +28,7 @@ export class AlphaUpdatePage {
   pageTitle = element(by.id('jhi-alpha-heading'));
   saveButton = element(by.id('save-entity'));
   cancelButton = element(by.id('cancel-save'));
+
   firstnameInput = element(by.id('field_firstname'));
   lastnameInput = element(by.id('field_lastname'));
   birthdayInput = element(by.id('field_birthday'));

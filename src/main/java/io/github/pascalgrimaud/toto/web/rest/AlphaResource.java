@@ -23,7 +23,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -93,9 +92,7 @@ public class AlphaResource {
     /**
      * {@code GET  /alphas} : get all the alphas.
      *
-
      * @param pageable the pagination information.
-
      * @param criteria the criteria which the requested entities should match.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of alphas in body.
      */
@@ -108,11 +105,11 @@ public class AlphaResource {
     }
 
     /**
-    * {@code GET  /alphas/count} : count all the alphas.
-    *
-    * @param criteria the criteria which the requested entities should match.
-    * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the count in body.
-    */
+     * {@code GET  /alphas/count} : count all the alphas.
+     *
+     * @param criteria the criteria which the requested entities should match.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the count in body.
+     */
     @GetMapping("/alphas/count")
     public ResponseEntity<Long> countAlphas(AlphaCriteria criteria) {
         log.debug("REST request to count Alphas by criteria: {}", criteria);

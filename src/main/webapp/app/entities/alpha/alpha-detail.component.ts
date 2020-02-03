@@ -13,9 +13,7 @@ export class AlphaDetailComponent implements OnInit {
   constructor(protected activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.activatedRoute.data.subscribe(({ alpha }) => {
-      this.alpha = alpha;
-    });
+    this.activatedRoute.data.subscribe(({ alpha }) => (this.alpha = alpha));
   }
 
   previousState(): void {

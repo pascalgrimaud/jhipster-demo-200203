@@ -25,6 +25,7 @@ describe('Alpha e2e test', () => {
     alphaComponentsPage = new AlphaComponentsPage();
     await browser.wait(ec.visibilityOf(alphaComponentsPage.title), 5000);
     expect(await alphaComponentsPage.getTitle()).to.eq('totoApp.alpha.home.title');
+    await browser.wait(ec.or(ec.visibilityOf(alphaComponentsPage.entities), ec.visibilityOf(alphaComponentsPage.noResult)), 1000);
   });
 
   it('should load create Alpha page', async () => {
@@ -38,14 +39,17 @@ describe('Alpha e2e test', () => {
     const nbButtonsBeforeCreate = await alphaComponentsPage.countDeleteButtons();
 
     await alphaComponentsPage.clickOnCreateButton();
+
     await promise.all([
       alphaUpdatePage.setFirstnameInput('firstname'),
       alphaUpdatePage.setLastnameInput('lastname'),
       alphaUpdatePage.setBirthdayInput('2000-12-31')
     ]);
+
     expect(await alphaUpdatePage.getFirstnameInput()).to.eq('firstname', 'Expected Firstname value to be equals to firstname');
     expect(await alphaUpdatePage.getLastnameInput()).to.eq('lastname', 'Expected Lastname value to be equals to lastname');
     expect(await alphaUpdatePage.getBirthdayInput()).to.eq('2000-12-31', 'Expected birthday value to be equals to 2000-12-31');
+
     await alphaUpdatePage.save();
     expect(await alphaUpdatePage.getSaveButton().isPresent(), 'Expected save button disappear').to.be.false;
 

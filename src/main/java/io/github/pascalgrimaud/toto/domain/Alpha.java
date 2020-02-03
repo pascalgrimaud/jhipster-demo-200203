@@ -1,4 +1,5 @@
 package io.github.pascalgrimaud.toto.domain;
+
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 

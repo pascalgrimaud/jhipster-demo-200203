@@ -1,34 +1,37 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <div *ngIf="alpha">
-            <h2><span jhiTranslate="totoApp.alpha.detail.title">Alpha</span> {{alpha.id}}</h2>
+            <h2><span jhiTranslate="totoApp.alpha.detail.title">Alpha</span> {{ alpha.id }}</h2>
+
             <hr>
+
             <jhi-alert-error></jhi-alert-error>
+
             <dl class="row-md jh-entity-details">
                 <dt><span jhiTranslate="totoApp.alpha.firstname">Firstname</span></dt>
                 <dd>
-                    <span>{{alpha.firstname}}</span>
+                    <span>{{ alpha.firstname }}</span>
                 </dd>
                 <dt><span jhiTranslate="totoApp.alpha.lastname">Lastname</span></dt>
                 <dd>
-                    <span>{{alpha.lastname}}</span>
+                    <span>{{ alpha.lastname }}</span>
                 </dd>
                 <dt><span jhiTranslate="totoApp.alpha.birthday">Birthday</span></dt>
                 <dd>
-                    <span>{{alpha.birthday}}</span>
+                    <span>{{ alpha.birthday }}</span>
                 </dd>
             </dl>
 
             <button type="submit"
                     (click)="previousState()"
                     class="btn btn-info">
-                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
             </button>
 
             <button type="button"
                     [routerLink]="['/alpha', alpha.id, 'edit']"
                     class="btn btn-primary">
-                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
             </button>
         </div>
     </div>

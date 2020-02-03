@@ -133,7 +133,7 @@ public class AlphaResourceIT {
         // Create the Alpha
         AlphaDTO alphaDTO = alphaMapper.toDto(alpha);
         restAlphaMockMvc.perform(post("/api/alphas")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .contentType(TestUtil.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(alphaDTO)))
             .andExpect(status().isCreated());
 
@@ -157,7 +157,7 @@ public class AlphaResourceIT {
 
         // An entity with an existing ID cannot be created, so this API call must fail
         restAlphaMockMvc.perform(post("/api/alphas")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .contentType(TestUtil.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(alphaDTO)))
             .andExpect(status().isBadRequest());
 
@@ -178,7 +178,7 @@ public class AlphaResourceIT {
         AlphaDTO alphaDTO = alphaMapper.toDto(alpha);
 
         restAlphaMockMvc.perform(post("/api/alphas")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .contentType(TestUtil.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(alphaDTO)))
             .andExpect(status().isBadRequest());
 
@@ -197,7 +197,7 @@ public class AlphaResourceIT {
         AlphaDTO alphaDTO = alphaMapper.toDto(alpha);
 
         restAlphaMockMvc.perform(post("/api/alphas")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .contentType(TestUtil.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(alphaDTO)))
             .andExpect(status().isBadRequest());
 
@@ -214,7 +214,7 @@ public class AlphaResourceIT {
         // Get all the alphaList
         restAlphaMockMvc.perform(get("/api/alphas?sort=id,desc"))
             .andExpect(status().isOk())
-            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(alpha.getId().intValue())))
             .andExpect(jsonPath("$.[*].firstname").value(hasItem(DEFAULT_FIRSTNAME)))
             .andExpect(jsonPath("$.[*].lastname").value(hasItem(DEFAULT_LASTNAME)))
@@ -230,7 +230,7 @@ public class AlphaResourceIT {
         // Get the alpha
         restAlphaMockMvc.perform(get("/api/alphas/{id}", alpha.getId()))
             .andExpect(status().isOk())
-            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(alpha.getId().intValue()))
             .andExpect(jsonPath("$.firstname").value(DEFAULT_FIRSTNAME))
             .andExpect(jsonPath("$.lastname").value(DEFAULT_LASTNAME))
@@ -523,7 +523,7 @@ public class AlphaResourceIT {
     private void defaultAlphaShouldBeFound(String filter) throws Exception {
         restAlphaMockMvc.perform(get("/api/alphas?sort=id,desc&" + filter))
             .andExpect(status().isOk())
-            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(alpha.getId().intValue())))
             .andExpect(jsonPath("$.[*].firstname").value(hasItem(DEFAULT_FIRSTNAME)))
             .andExpect(jsonPath("$.[*].lastname").value(hasItem(DEFAULT_LASTNAME)))
@@ -532,7 +532,7 @@ public class AlphaResourceIT {
         // Check, that the count call also returns 1
         restAlphaMockMvc.perform(get("/api/alphas/count?sort=id,desc&" + filter))
             .andExpect(status().isOk())
-            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(content().string("1"));
     }
 
@@ -542,14 +542,14 @@ public class AlphaResourceIT {
     private void defaultAlphaShouldNotBeFound(String filter) throws Exception {
         restAlphaMockMvc.perform(get("/api/alphas?sort=id,desc&" + filter))
             .andExpect(status().isOk())
-            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$").isArray())
             .andExpect(jsonPath("$").isEmpty());
 
         // Check, that the count call also returns 0
         restAlphaMockMvc.perform(get("/api/alphas/count?sort=id,desc&" + filter))
             .andExpect(status().isOk())
-            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(content().string("0"));
     }
 
@@ -581,7 +581,7 @@ public class AlphaResourceIT {
         AlphaDTO alphaDTO = alphaMapper.toDto(updatedAlpha);
 
         restAlphaMockMvc.perform(put("/api/alphas")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .contentType(TestUtil.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(alphaDTO)))
             .andExpect(status().isOk());
 
@@ -604,7 +604,7 @@ public class AlphaResourceIT {
 
         // If the entity doesn't have an ID, it will throw BadRequestAlertException
         restAlphaMockMvc.perform(put("/api/alphas")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .contentType(TestUtil.APPLICATION_JSON)
             .content(TestUtil.convertObjectToJsonBytes(alphaDTO)))
             .andExpect(status().isBadRequest());
 
@@ -623,7 +623,7 @@ public class AlphaResourceIT {
 
         // Delete the alpha
         restAlphaMockMvc.perform(delete("/api/alphas/{id}", alpha.getId())
-            .accept(TestUtil.APPLICATION_JSON_UTF8))
+            .accept(TestUtil.APPLICATION_JSON))
             .andExpect(status().isNoContent());
 
         // Validate the database contains one less item
