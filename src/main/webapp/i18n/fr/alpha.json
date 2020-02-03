@@ -1,0 +1,24 @@
+{
+  "totoApp": {
+    "alpha": {
+      "home": {
+        "title": "Alphas",
+        "createLabel": "Créer un nouveau Alpha",
+        "createOrEditLabel": "Créer ou éditer un Alpha",
+        "notFound": "Aucun Alpha trouvé"
+      },
+      "created": "Un nouveau Alpha a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Alpha avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Alpha avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Alpha {{ id }} ?"
+      },
+      "detail": {
+        "title": "Alpha"
+      },
+      "firstname": "Firstname",
+      "lastname": "Lastname",
+      "birthday": "Birthday"
+    }
+  }
+}

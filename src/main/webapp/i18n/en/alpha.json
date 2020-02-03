@@ -1,0 +1,24 @@
+{
+  "totoApp": {
+    "alpha": {
+      "home": {
+        "title": "Alphas",
+        "createLabel": "Create a new Alpha",
+        "createOrEditLabel": "Create or edit a Alpha",
+        "notFound": "No Alphas found"
+      },
+      "created": "A new Alpha is created with identifier {{ param }}",
+      "updated": "A Alpha is updated with identifier {{ param }}",
+      "deleted": "A Alpha is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Alpha {{ id }}?"
+      },
+      "detail": {
+        "title": "Alpha"
+      },
+      "firstname": "Firstname",
+      "lastname": "Lastname",
+      "birthday": "Birthday"
+    }
+  }
+}

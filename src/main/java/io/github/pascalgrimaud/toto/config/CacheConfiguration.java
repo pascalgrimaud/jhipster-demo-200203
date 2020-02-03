@@ -42,6 +42,7 @@ public class CacheConfiguration {
             createCache(cm, io.github.pascalgrimaud.toto.domain.User.class.getName());
             createCache(cm, io.github.pascalgrimaud.toto.domain.Authority.class.getName());
             createCache(cm, io.github.pascalgrimaud.toto.domain.User.class.getName() + ".authorities");
+            createCache(cm, io.github.pascalgrimaud.toto.domain.Alpha.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
