@@ -1,0 +1,43 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "io.github.pascalgrimaud.toto",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "6.6.0",
+    "applicationType": "monolith",
+    "baseName": "toto",
+    "packageName": "io.github.pascalgrimaud.toto",
+    "packageFolder": "io/github/pascalgrimaud/toto",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "M2U0YjRhY2MwMjJkZWQxOGIyZGViMDNlZTJhNzQ1NTliZTU4N2FkNDhiMGE3ZDQ1ODcyMzJkYzE5M2QwY2YwZWM1ZmNhZmNiYzY1YjcwMWRlNDM3NTFiYmYwZDQ3YTNhOTVlMTZjMmQwZTBhN2MyZmQ1NjFiMjcxZDNlNzkzZWI=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "united",
+    "clientThemeVariant": "dark",
+    "creationTimestamp": 1580737773759,
+    "testFrameworks": ["protractor"],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": ["en", "fr"],
+    "blueprints": []
+  }
+}
